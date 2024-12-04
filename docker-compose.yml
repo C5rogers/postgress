@@ -3,6 +3,7 @@ services:
   postgres:
     image: postgres:latest
     container_name: postgres_container
+    network_mode: host
     ports:
       - "5432:5432" # Expose the database on the default port
     environment:

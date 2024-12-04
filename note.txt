@@ -1,0 +1,2 @@
+starting to shalle: psql -h localhost -U myuser -d newdatabase
+connecting as a super user: docker exec -it postgres_container psql -U postgres  (password=natiman)
