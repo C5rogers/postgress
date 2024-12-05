@@ -51,3 +51,11 @@ sudo kill -9 <PID>
 ```sh
 docker exec -it postgres_container psql -U postgres
 ```
+
+# Additionally
+
+```sh
+#  go to localhost:5050 to get the databse
+http://localhost:5050/
+
+```
