@@ -6,10 +6,17 @@ cd postgress
 docker-compose up -d
 ```
 
+# Inspect the container to extract the connecting ip address
+
+```sh
+
+docker inspect <containerId> # and replace the connection string ip address form the inspect information provided
+```
+
 # Connecting to Database
 
 ```sh
-psql -h localhost -U databaseuser -d database
+psql -h <conatainerIpAddress> -U databaseuser -d database
 ```
 
 # Creating New Database after connecting in sheel

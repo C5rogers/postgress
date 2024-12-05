@@ -3,7 +3,6 @@ services:
   postgres:
     image: postgres:latest
     container_name: ${DATABASE_CONTAINER_NAME}
-    network_mode: host
     ports:
       - ${DATABASE_PORT}:${DATABASE_PORT}
     environment:
@@ -12,6 +11,14 @@ services:
       POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - postgres_data:/var/lib/postgresql/data # Persistent storage
-
+  pgadmin:
+    container_name: ${PGADMIN_CONTAINER_NAME}
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "5050:80"
 volumes:
   postgres_data:
