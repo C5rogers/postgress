@@ -1,0 +1,12 @@
+version: "3"
+
+dotenv: [".env"]
+
+tasks:
+  compose:
+    cmds:
+      - docker compose -f docker-compose.yml {{.CLI_ARGS}}
+
+  "log_pg":
+    cmds:
+      - docker logs -f ${DATABASE_CONTAINER_NAME} --tail=10

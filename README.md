@@ -59,3 +59,16 @@ docker exec -it postgres_container psql -U postgres
 http://localhost:5050/
 
 ```
+
+# Task commands
+
+```sh
+# to initialize the database
+task compose -- up
+
+# to initialize the database in debug mode
+task compose -- up -d
+
+# to see database logs
+task log_pg
+```
