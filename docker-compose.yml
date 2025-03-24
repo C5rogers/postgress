@@ -22,3 +22,5 @@ services:
       - "5050:80"
 volumes:
   postgres_data:
+
+# this is the simple configuration for postgress 
