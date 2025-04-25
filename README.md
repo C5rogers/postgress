@@ -72,3 +72,20 @@ task compose -- up -d
 # to see database logs
 task log_pg
 ```
+
+# To dump and backup the database u can use the following command after u setup the pg_dumb
+
+```sh
+e.g: pg_dump --dbname=postgresql://c5rogers:natiman@172.18.0.3:5432/hackaton_project \
+--format=custom \
+--file=hackaton_project.backup
+```
+
+# To restore the database u can use the following command after u setup the pg_restore command
+
+```sh
+pg_restore --dbname=postgresql://c5rogers:natiman@172.18.0.3:5432/hackaton_project\
+--verbose \
+--clean \
+hackaton_project.backup
+```
