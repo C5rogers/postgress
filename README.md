@@ -89,3 +89,10 @@ pg_restore --dbname=postgresql://c5rogers:natiman@172.18.0.3:5432/hackaton_proje
 --clean \
 hackaton_project.backup
 ```
+
+# To backup the database on production server
+
+```sh
+pg_dump -h <host> -U <user> -d <database> > <backup_file_name>.sql
+e.g: pg_dump -h staging-restored.cqef577xwqhr.eu-central-1.rds.amazonaws.com -U postgres -d steep_meal > steep_meal_backup.sql
+```
