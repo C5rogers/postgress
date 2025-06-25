@@ -101,3 +101,8 @@ e.g: pg_dump -h staging-restored.cqef577xwqhr.eu-central-1.rds.amazonaws.com -U 
 ```sh
 pg_dump -h <host> -U <user> -d <database> --schema=<schema_name> --data-only --file=<backup_file.sql>
 ```
+
+# Another way to restore a db content
+```sh
+psql -h <host> -U <user> -d <database> -f <backup_file.sql>
+```
