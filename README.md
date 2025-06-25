@@ -96,3 +96,8 @@ hackaton_project.backup
 pg_dump -h <host> -U <user> -d <database> > <backup_file_name>.sql
 e.g: pg_dump -h staging-restored.cqef577xwqhr.eu-central-1.rds.amazonaws.com -U postgres -d steep_meal > steep_meal_backup.sql
 ```
+
+# To Dump specific schema of the database use the command like this
+```sh
+pg_dump -h <host> -U <user> -d <database> --schema=<schema_name> --data-only --file=<backup_file.sql>
+```
