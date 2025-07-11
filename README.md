@@ -98,11 +98,22 @@ e.g: pg_dump -h staging-restored.cqef577xwqhr.eu-central-1.rds.amazonaws.com -U 
 ```
 
 # To Dump specific schema of the database use the command like this
+
 ```sh
 pg_dump -h <host> -U <user> -d <database> --schema=<schema_name> --data-only --file=<backup_file.sql>
 ```
 
 # Another way to restore a db content
+
 ```sh
 psql -h <host> -U <user> -d <database> -f <backup_file.sql>
 ```
+
+# To save the database erd files to your local machine it is configured as the docker-compose.yml file but give permission for it like this
+
+```sh
+sudo chown -R 5050:5050 ./pgadmin_storage
+sudo chown -R $USER:$USER ./pgadmin_storage
+```
+
+# this will give you the permissions to access the pgadmin_storage folder and save the erd files in it
